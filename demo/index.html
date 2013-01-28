@@ -1,0 +1,69 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+	
+	<meta charset="utf-8">
+	
+	<title>Kerplop!</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	
+	<!-- rgne.ws/MuCQZI -->
+	<script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');</script>
+	
+	<style>
+		<!--
+			
+			.kerplop { border: 1px solid red; }
+			#incoming, #outgoing, #other { border: 1px solid green; }
+			.kerplop, #incoming, #outgoing { margin: 20px 0; padding: 20px; }
+			
+			.js .kerploped, .js .off { display: none !important; visibility: hidden; } /* Add this manually or let plugin do it. */
+			
+		-->
+	</style>
+	
+</head>
+<body>
+	
+	<div class="kerplop" data-kerplop-to="incoming" data-kerplop-use="append" data-kerplop-flag="off"><p><b>In</b>coming</p></div>
+	
+	<div id="incoming">-------------</div>
+	
+	<hr>
+	
+	<div class="kerplop" data-kerplop-from="outgoing" data-kerplop-use="prepend">-------------</div>
+	
+	<div id="outgoing" class="kerploped"><p><b>Out</b>going</p></div>
+	
+	<hr>
+	
+	<div class="kerplop kerplop2" data-kerplop-from="other">-------------</div>
+	
+	<div id="other" class="kerploped"><p><b>Out</b>going #2</p></div>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>-->
+	
+	<script src="../kerplop/jquery.kerplop.js"></script>
+	
+	<script type="text/javascript">
+		<!--
+			
+			$(document).ready(function() {
+				
+				$('.kerplop').kerplop({
+					onInit: function($from, $to) { console.log('onInit', this, $from, $to); },
+					onAfterInit: function($from, $to) { console.log('onAfterInit', this, $from, $to); }
+				});
+				
+				$('.kerplop2').kerplop('destroy');
+				
+			});
+			
+		//-->
+	</script>
+	
+</body>
+</html>

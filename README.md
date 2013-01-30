@@ -2,9 +2,90 @@
 
 ### Move stuff from one place to another.
 
-More information coming soon.
-
 ---
+
+#### USAGE
+
+Put jQuery on your page:
+
+```html
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+```
+
+… and link to the plugin:
+
+```html
+<script src="jquery.kerplop.js"></script>
+```
+
+Next, Kerplop can be instantiated like so:
+
+```html
+<script type="text/javascript">
+	<!--
+		
+		$('.kerplop').kerplop();
+		
+	//-->
+</script>
+```
+
+Here's an example with all the "global" options:
+
+```html
+<script type="text/javascript">
+	<!--
+		
+		var $kerplop = $('.kerplop');
+		
+		if ($kerplop.length) {
+			
+			$('.kerplop').kerplop({
+				use : 'html',
+				flag : 'kerplopped',
+				onInit: function($from, $to) { console.log('onInit', this, $from, $to); },
+				onAfterInit: function($from, $to) { console.log('onAfterInit', this, $from, $to); }
+			});
+			
+		}
+		
+	//-->
+</script>
+```
+
+… where:
+
+* `use`: Replacement function to use when copying content from, or to, other elements. Allowed values are [`after`](http://api.jquery.com/after/), [`append`](http://api.jquery.com/append/), [`before`](http://api.jquery.com/before/), [`html`](http://api.jquery.com/html/) (default), [`prepend`](http://api.jquery.com/prepend/) and [`text`](http://api.jquery.com/text/).
+* `flag`: CSS class name to apply to element that's copied from, or the the element that's copying its contents to another element; useful for when you want to hide the `kerplopped` element using CSS techniques.
+* `onInit`: Callback on plugin initialization; this function gets passed two arguments 1) the "from" element 2) the "to" element and "this" is the context of the current element.
+* `onAfterInit`: Callback after plugin initialization; this function gets passed two arguments 1) the "from" element 2) the "to" element and "this" is the context of the current element.
+
+The beauty of this plugin is that it uses [HTML5 `data` attributes](http://html5doctor.com/html5-custom-data-attributes/) to "localize" the plugin options.
+
+Kerplop's `data-` options are:
+
+* `data-kerplop-from`: Element (ID) to copy from.
+* `data-kerplop-to`: Element (ID) to copy to.
+* `data-kerplop-use`: See above.
+* `data-kerplop-flag`: See above.
+
+##### Example 1: Copy from another element:
+
+```html
+<div class="kerplop" data-kerplop-from="other"></div>
+```
+
+##### Example 2: Copy from another element using jQuery's [`prepend`](http://api.jquery.com/prepend/).
+
+```
+<div class="kerplop" data-kerplop-from="outgoing" data-kerplop-use="prepend"></div>
+```
+
+##### Example 3: Copy to another element using jQuery's [`append`](http://api.jquery.com/append/) and use a class name of "off".
+
+```
+<div class="kerplop" data-kerplop-to="incoming" data-kerplop-use="append" data-kerplop-flag="off"><p>HTML here!</p></div>
+```
 
 #### DEMO
 

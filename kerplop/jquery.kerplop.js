@@ -33,7 +33,7 @@
 	defaults = {
 		
 		use  : 'html',
-		flag : 'kerploped',
+		flag : 'kerplopped',
 		
 		onInit      : $.noop,
 		onAfterInit : $.noop

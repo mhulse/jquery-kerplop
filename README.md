@@ -6,7 +6,7 @@
 
 #### USAGE
 
-Put jQuery on your page:
+Put [jQuery](http://jquery.com/) on your page:
 
 ```html
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -77,15 +77,17 @@ Kerplop's `data-` options are:
 
 ##### Example 2: Copy from another element using jQuery's [`prepend`](http://api.jquery.com/prepend/).
 
-```
+```html
 <div class="kerplop" data-kerplop-from="outgoing" data-kerplop-use="prepend"></div>
 ```
 
 ##### Example 3: Copy to another element using jQuery's [`append`](http://api.jquery.com/append/) and use a class name of "off".
 
-```
+```html
 <div class="kerplop" data-kerplop-to="incoming" data-kerplop-use="append" data-kerplop-flag="off"><p>HTML here!</p></div>
 ```
+
+---
 
 #### DEMO
 

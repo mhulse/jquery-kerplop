@@ -15,9 +15,7 @@
 	<style>
 		<!--
 			
-			.kerplop { border: 1px solid red; }
-			#incoming, #outgoing, #other { border: 1px solid green; }
-			.kerplop, #incoming, #outgoing { margin: 20px 0; padding: 20px; }
+			section > div { margin: 20px 0; padding: 20px; border: 1px solid green; }
 			
 			.js .kerplopped, .js .off { display: none !important; visibility: hidden; } /* Add this manually or let plugin do it. */
 			
@@ -53,9 +51,21 @@
 	
 	<section>
 		
+		<h1>Not using <code>data-</code> "locals"</h1>
+		
+		<div class="kerplop2" class="kerplopped"><p><b>Out</b>going #2</p></div>
+		
+		<div id="baz">-------------</div>
+		
+	</section>
+	
+	<hr>
+	
+	<section>
+		
 		<h1>Testing destroy</h1>
 		
-		<div class="kerplop kerplop2" data-kerplop-from="other">-------------</div>
+		<div class="kerplop kerplop3" data-kerplop-from="other">-------------</div>
 		
 		<div id="other" class="kerplopped"><p><b>Out</b>going #2</p></div>
 		
@@ -71,11 +81,13 @@
 			$(document).ready(function() {
 				
 				$('.kerplop').kerplop({
-					onInit: function($from, $to) { console.log('onInit', this, $from, $to); },
-					onAfterInit: function($from, $to) { console.log('onAfterInit', this, $from, $to); }
+					onInit      : function($from, $to) { console.log('onInit', this, $from, $to); },
+					onAfterInit : function($from, $to) { console.log('onAfterInit', this, $from, $to); }
 				});
 				
-				$('.kerplop2').kerplop('destroy');
+				$('.kerplop2').kerplop({ to: 'baz', use: 'text' });
+				
+				$('.kerplop3').kerplop('destroy');
 				
 			});
 			

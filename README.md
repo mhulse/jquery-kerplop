@@ -41,10 +41,12 @@ Here's an example with all the "global" options:
 		if ($kerplop.length) {
 			
 			$('.kerplop').kerplop({
-				use : 'html',
-				flag : 'kerplopped',
-				onInit: function($from, $to) { console.log('onInit', this, $from, $to); },
-				onAfterInit: function($from, $to) { console.log('onAfterInit', this, $from, $to); }
+				from        : "",
+				to          : "",
+				use         : 'html',
+				flag        : 'kerplopped',
+				onInit      : function($from, $to) { console.log('onInit', this, $from, $to); },
+				onAfterInit : function($from, $to) { console.log('onAfterInit', this, $from, $to); }
 			});
 			
 		}
@@ -55,6 +57,8 @@ Here's an example with all the "global" options:
 
 … where:
 
+* `from`: Element, ID name, to copy from. Used if `data-from` local is not defined.
+* `to`: Element, ID name, to copy to. Used if `data-to` local is not defined.
 * `use`: Replacement function to use when copying content from, or to, other elements. Allowed values are [`after`](http://api.jquery.com/after/), [`append`](http://api.jquery.com/append/), [`before`](http://api.jquery.com/before/), [`html`](http://api.jquery.com/html/) (default), [`prepend`](http://api.jquery.com/prepend/) and [`text`](http://api.jquery.com/text/).
 * `flag`: CSS class name to apply to element that's copied from, or the the element that's copying its contents to another element; useful for when you want to hide the `kerplopped` element using CSS techniques.
 * `onInit`: Callback on plugin initialization; this function gets passed two arguments 1) the "from" element 2) the "to" element and "this" is the context of the current element.
@@ -64,10 +68,10 @@ The beauty of this plugin is that it uses [HTML5 `data` attributes](http://html5
 
 Kerplop's `data-` options are:
 
-* `data-kerplop-from`: Element (ID) to copy from.
-* `data-kerplop-to`: Element (ID) to copy to.
-* `data-kerplop-use`: See above.
-* `data-kerplop-flag`: See above.
+* `data-kerplop-from`: IBID.
+* `data-kerplop-to`: IBID.
+* `data-kerplop-use`: IBID.
+* `data-kerplop-flag`: IBID.
 
 ##### Example 1: Copy from another element:
 
@@ -81,7 +85,15 @@ Kerplop's `data-` options are:
 <div class="kerplop" data-kerplop-from="outgoing" data-kerplop-use="prepend"></div>
 ```
 
-##### Example 3: Copy to another element using jQuery's [`append`](http://api.jquery.com/append/) and use a class name of "off".
+##### Example #3: Not use any `data-` locals:
+
+```html
+<div class="kerplop2" class="kerplopped"><p><b>Out</b>going #2</p></div>
+```
+
+In this case, Kerplop will use options defined in plugin call (see examples above).
+
+##### Example 4: Copy to another element using jQuery's [`append`](http://api.jquery.com/append/) and use a class name of "off".
 
 ```html
 <div class="kerplop" data-kerplop-to="incoming" data-kerplop-use="append" data-kerplop-flag="off"><p>HTML here!</p></div>

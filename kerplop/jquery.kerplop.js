@@ -32,6 +32,8 @@
 	
 	defaults = {
 		
+		from : "",
+		to   : "",
 		use  : 'html',
 		flag : 'kerplopped',
 		
@@ -53,8 +55,8 @@
 				data_to      = $this.data('kerplop-to'),
 				data_use     = $this.data('kerplop-use'),
 				data_flag    = $this.data('kerplop-flag'),
-				$from        = ((data_from) ? $('#' + data_from) : ""),
-				$to          = ((data_to) ? $('#' + data_to) : ""),
+				$from        = ((data_from) ? $('#' + data_from) : ((settings.from.length) ? $('#' + settings.from) : "")),
+				$to          = ((data_to) ? $('#' + data_to) : ((settings.to.length) ? $('#' + settings.to) : "")),
 				use          = ((data_use && (/^(?:after|append|before|html|prepend|text)$/).test(data_use)) ? data_use : settings.use),
 				flag         = (data_flag || settings.flag);
 				
@@ -94,13 +96,13 @@
 					 * @see http://api.jquery.com/category/manipulation/
 					 */
 					
-					if ($from) {
+					if ($from.length) {
 						
 						$this[use]($from.addClass(flag).html());
 						
 					}
 					
-					if ($to) {
+					if ($to.length) {
 						
 						$to[data.use]($this.addClass(flag).html());
 						
@@ -110,7 +112,7 @@
 					
 				} else {
 					
-					console.warn('kerplop already initialized on', this);
+					console.warn('Kerplop already initialized on', this);
 					
 					return this;
 					

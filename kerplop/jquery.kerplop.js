@@ -32,8 +32,8 @@
 	
 	defaults = {
 		
-		from : "",
-		to   : "",
+		from : '',
+		to   : '',
 		use  : 'html',
 		flag : 'kerplopped',
 		
@@ -55,8 +55,8 @@
 				data_to      = $this.data('kerplop-to'),
 				data_use     = $this.data('kerplop-use'),
 				data_flag    = $this.data('kerplop-flag'),
-				$from        = ((data_from) ? $('#' + data_from) : ((settings.from.length) ? $('#' + settings.from) : "")),
-				$to          = ((data_to) ? $('#' + data_to) : ((settings.to.length) ? $('#' + settings.to) : "")),
+				$from        = ((data_from) ? $('#' + data_from) : ((settings.from.length) ? $('#' + settings.from) : '')),
+				$to          = ((data_to) ? $('#' + data_to) : ((settings.to.length) ? $('#' + settings.to) : '')),
 				use          = ((data_use && (/^(?:after|append|before|html|prepend|text)$/).test(data_use)) ? data_use : settings.use),
 				flag         = (data_flag || settings.flag);
 				

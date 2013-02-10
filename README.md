@@ -15,7 +15,7 @@ Put [jQuery](http://jquery.com/) on your page:
 … and link to the plugin:
 
 ```html
-<script src="jquery.kerplop.js"></script>
+<script src="jquery.kerplop.min.js"></script>
 ```
 
 Next, Kerplop can be instantiated like so:
@@ -41,8 +41,8 @@ Here's an example with all the "global" options:
 		if ($kerplop.length) {
 			
 			$('.kerplop').kerplop({
-				from        : "",
-				to          : "",
+				from        : '',
+				to          : '',
 				use         : 'html',
 				flag        : 'kerplopped',
 				onInit      : function($from, $to) { console.log('onInit', this, $from, $to); },

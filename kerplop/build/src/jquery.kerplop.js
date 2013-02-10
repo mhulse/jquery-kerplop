@@ -1,15 +1,4 @@
-/**
- * jQuery Kerplop!
- * Move stuff from one place to another.
- *
- * @author    Micky Hulse
- * @link      http://hulse.me
- * @docs      http://github.com/registerguard/jquery-kerplop
- * @copyright Copyright (c) 2013 Micky Hulse.
- * @license   Released under the Apache License, Version 2.0.
- * @version   1.0.0
- * @date      2013/01/27
- */
+/*global jQuery:false */
 
 //----------------------------------
 
@@ -25,8 +14,6 @@
 //----------------------------------
 
 ;(function($, window, document, undefined) {
-	
-	'use strict';
 	
 	var console = window.console || { log : function() {}, warn : function() {} },
 	
@@ -64,7 +51,7 @@
 					
 					$this.data('kerplop', {
 						
-						this     : $this,
+						'this'   : $this,
 						from     : $from,
 						to       : $to,
 						use      : use,

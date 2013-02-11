@@ -13,6 +13,8 @@
 
 ;(function($, window, document, undefined) {
 	
+	'use strict';
+	
 	var console = window.console || { log : function() {}, warn : function() {} },
 	
 	defaults = {

@@ -37,21 +37,22 @@
 				
 				var settings = $.extend({}, defaults, options),
 				$this        = $(this),
-				data         = $this.data('kerplop'),
-				data_from    = $this.data('kerplop-from'),
-				data_to      = $this.data('kerplop-to'),
-				data_use     = $this.data('kerplop-use'),
-				data_flag    = $this.data('kerplop-flag'),
-				$from        = ((data_from) ? $('#' + data_from) : ((settings.from.length) ? $('#' + settings.from) : '')),
-				$to          = ((data_to) ? $('#' + data_to) : ((settings.to.length) ? $('#' + settings.to) : '')),
-				use          = ((data_use && (/^(?:after|append|before|html|prepend|text)$/).test(data_use)) ? data_use : settings.use),
-				flag         = (data_flag || settings.flag);
+				data         = $this.data('kerplop');
 				
 				if ( ! data) {
 					
+					var data_from = $this.data('kerplop-from'),
+					data_to       = $this.data('kerplop-to'),
+					data_use      = $this.data('kerplop-use'),
+					data_flag     = $this.data('kerplop-flag'),
+					$from         = ((data_from) ? $('#' + data_from) : ((settings.from.length) ? $('#' + settings.from) : '')),
+					$to           = ((data_to) ? $('#' + data_to) : ((settings.to.length) ? $('#' + settings.to) : '')),
+					use           = ((data_use && (/^(?:after|append|before|html|prepend|text)$/).test(data_use)) ? data_use : settings.use),
+					flag          = (data_flag || settings.flag);
+					
 					$this.data('kerplop', {
 						
-						'this'   : $this,
+						target   : $this,
 						from     : $from,
 						to       : $to,
 						use      : use,
@@ -60,6 +61,7 @@
 						init     : false
 						
 					});
+					
 					data = $this.data('kerplop');
 					
 				}
@@ -68,7 +70,7 @@
 					
 					data.init = true;
 					
-					settings.onInit.call($this, $from, $to);
+					data.settings.onInit.call(data.target, data.from, data.to);
 					
 					/**
 					 * Reference:
@@ -83,19 +85,19 @@
 					 * @see http://api.jquery.com/category/manipulation/
 					 */
 					
-					if ($from.length) {
+					if (data.from.length) {
 						
-						$this[use]($from.addClass(flag).html());
-						
-					}
-					
-					if ($to.length) {
-						
-						$to[data.use]($this.addClass(flag).html());
+						data.target[data.use](data.from.addClass(data.flag).html());
 						
 					}
 					
-					settings.onAfterInit.call($this, $from, $to);
+					if (data.to.length) {
+						
+						data.to[data.use](data.target.addClass(data.flag).html());
+						
+					}
+					
+					data.settings.onAfterInit.call(data.target, data.from, data.to);
 					
 				} else {
 					
@@ -124,7 +126,7 @@
 					
 					// What's the best way to restore things back to their original states?
 					
-				}
+				} // ... else warn that this hasn't been initialzed with kerplop?
 			
 			});
 			

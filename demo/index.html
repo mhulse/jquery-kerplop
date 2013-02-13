@@ -81,8 +81,11 @@
 			$(document).ready(function() {
 				
 				$('.kerplop').kerplop({
-					onInit      : function($from, $to) { console.log('onInit', this, $from, $to); },
-					onAfterInit : function($from, $to) { console.log('onAfterInit', this, $from, $to); }
+					
+					// http://stackoverflow.com/a/1688108/922323
+					onInit      : function($from, $to) { if (window.console) { console.log('onInit', this, $from, $to); } },
+					onAfterInit : function($from, $to) { if (window.console) { console.log('onAfterInit', this, $from, $to); } }
+					
 				});
 				
 				$('.kerplop2').kerplop({ to: 'baz', use: 'text' });

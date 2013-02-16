@@ -26,7 +26,13 @@
 
 ;(function($, window, document, undefined) {
 	
-	'use strict'; // Lint setting.
+	/**
+	 * Function-level strict mode syntax.
+	 *
+	 * @see rgne.ws/XcZgn8
+	 */
+	
+	'use strict';
 	
 	//--------------------------------------------------------------------------
 	//
@@ -41,6 +47,8 @@
 	 */
 	
 	var console = window.console || { log : function() {}, warn : function() {} },
+	
+	//----------------------------------
 	
 	/**
 	 * The plugin namespace.

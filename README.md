@@ -21,7 +21,7 @@ Put [jQuery](http://jquery.com/) on your page:
 Next, Kerplop can be instantiated like so:
 
 ```html
-<script type="text/javascript">
+<script>
 	<!--
 		
 		$('.kerplop').kerplop();
@@ -33,7 +33,7 @@ Next, Kerplop can be instantiated like so:
 Here's an example with all the "global" options:
 
 ```html
-<script type="text/javascript">
+<script>
 	<!--
 		
 		var $kerplop = $('.kerplop');

@@ -85,27 +85,32 @@
 			return this.each(function() {
 				
 				//----------------------------------
-				// Local variable(s):
+				// Declare/initialize:
 				//----------------------------------
 				
-				var $this    = $(this),                         // Target object.
-				    data     = $this.data(NS),                  // Namespace instance data.
-				    settings = $.extend({}, defaults, options); // Merge defaults and options.
+				var $this = $(this),        // Target object.
+				    data  = $this.data(NS), // Namespace instance data.
+				    settings,
+				    data_from,
+				    data_to,
+				    data_use,
+				    data_flag;
 				
 				//----------------------------------
-				// Initialize data:
+				// Data?
 				//----------------------------------
 				
 				if ( ! data) {
 					
 					//----------------------------------
-					// Setup variables:
+					// Initialize:
 					//----------------------------------
 					
-					var data_from = $this.data('kerplop-from'), // See `defaults.from` docs.
-					    data_to   = $this.data('kerplop-to'),   // See `defaults.to` docs.
-					    data_use  = $this.data('kerplop-use'),  // See `defaults.use` docs.
-					    data_flag = $this.data('kerplop-flag'); // See `defaults.flag` docs.
+					settings  = $.extend({}, defaults, options); // Merge defaults and options.
+					data_from = $this.data('kerplop-from');      // See `defaults.from` docs.
+					data_to   = $this.data('kerplop-to');        // See `defaults.to` docs.
+					data_use  = $this.data('kerplop-use');       // See `defaults.use` docs.
+					data_flag = $this.data('kerplop-flag');      // See `defaults.flag` docs.
 					
 					//----------------------------------
 					// Namespaced instance data:
@@ -178,7 +183,7 @@
 			return this.each(function() {
 				
 				//----------------------------------
-				// Local variable(s):
+				// Declare/initialize:
 				//----------------------------------
 				
 				var $this = $(this),

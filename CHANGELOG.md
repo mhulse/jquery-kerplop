@@ -8,10 +8,13 @@
 	* The source JS file can be found in `/build/src`.
 	* Minified version is now located in `/kerplop/jquery.kerplop.min.js`.
 	* Un-minified version, with banner, located in `/kerplop/jquery.kerplop.js`.
+	* Added `.jshintrc` file with a nice set of reasonable defaults.
 * Removed `/kerplop/jquery.kerplop.js`.
 * Updated `demo/index.html` to use the minified version.
 * Fixed logic error; I was using `this` as an object key, but that's a reserved work in javascript.
 * Code passes linting.
+* Removed `type="text/javascript"` from demo page and `README.md`
+* Using one var per block.
 
 ##### Browser tests:
 

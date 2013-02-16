@@ -14,7 +14,7 @@
 * Fixed logic error; I was using `this` as an object key, but that's a reserved work in javascript.
 * Code passes linting.
 * Removed `type="text/javascript"` from demo page and `README.md`
-* Using one var per block.
+* Using "one var per block".
 
 ##### Browser tests:
 

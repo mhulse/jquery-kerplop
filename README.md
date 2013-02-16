@@ -57,10 +57,10 @@ Here's an example with all the "global" options:
 
 … where:
 
-* `from`: Element, ID name, to copy from. Used if `data-from` local is not defined.
-* `to`: Element, ID name, to copy to. Used if `data-to` local is not defined.
-* `use`: Replacement function to use when copying content from, or to, other elements. Allowed values are [`after`](http://api.jquery.com/after/), [`append`](http://api.jquery.com/append/), [`before`](http://api.jquery.com/before/), [`html`](http://api.jquery.com/html/) (default), [`prepend`](http://api.jquery.com/prepend/) and [`text`](http://api.jquery.com/text/).
-* `flag`: CSS class name to apply to element that's copied from, or the the element that's copying its contents to another element; useful for when you want to hide the `kerplopped` element using CSS techniques.
+* `from`: Element, ID name, to copy from. Used if `data-from` local is not defined. Default: `""`.
+* `to`: Element, ID name, to copy to. Used if `data-to` local is not defined. Default: `""`.
+* `use`: Replacement function to use when copying content from, or to, other elements. Allowed values are [`after`](http://api.jquery.com/after/), [`append`](http://api.jquery.com/append/), [`before`](http://api.jquery.com/before/), [`html`](http://api.jquery.com/html/), [`prepend`](http://api.jquery.com/prepend/) and [`text`](http://api.jquery.com/text/). Default: `html`.
+* `flag`: CSS class name to apply to element that's copied from, or the the element that's copying its contents to another element; useful for when you want to hide the `kerplopped` element using CSS techniques. Default: `kerplopped`.
 * `onInit`: Callback on plugin initialization; this function gets passed two arguments 1) the "from" element 2) the "to" element and "this" is the context of the current element.
 * `onAfterInit`: Callback after plugin initialization; this function gets passed two arguments 1) the "from" element 2) the "to" element and "this" is the context of the current element.
 

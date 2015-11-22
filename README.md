@@ -103,15 +103,15 @@ In this case, Kerplop will use options defined in plugin call (see examples abov
 
 #### DEMO
 
-[![qr code](http://chart.apis.google.com/chart?cht=qr&chl=https://github.com/registerguard/jquery-kerplop/&chs=240x240)](http://registerguard.github.com/jquery-kerplop/demo/)
+[![qr code](http://chart.apis.google.com/chart?cht=qr&chl=https://github.com/mhulse/jquery-kerplop/&chs=240x240)](http://mhulse.github.com/jquery-kerplop/demo/)
 
-(Scan QR code with phone and/or click to [view the latest demo](http://registerguard.github.com/jquery-kerplop/demo/).)
+(Scan QR code with phone and/or click to [view the latest demo](http://mhulse.github.com/jquery-kerplop/demo/).)
 
 ---
 
 #### LEGAL
 
-Copyright © 2013 [Micky Hulse](http://hulse.me)/[The Register-Guard](http://registerguard.com)
+Copyright © 2013 [Micky Hulse](http://hulse.me)/[The Register-Guard](http://mhulse.com)
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
 

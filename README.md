@@ -20,38 +20,28 @@ Put [jQuery](http://jquery.com/) on your page:
 
 Next, Kerplop can be instantiated like so:
 
-```html
-<script>
-	<!--
-		
-		$('.kerplop').kerplop();
-		
-	//-->
-</script>
+```js
+$(function() {
+	$('.kerplop').kerplop();
+});
 ```
 
 Here's an example with all the "global" options:
 
-```html
-<script>
-	<!--
-		
-		var $kerplop = $('.kerplop');
-		
-		if ($kerplop.length) {
-			
-			$('.kerplop').kerplop({
-				from        : '',
-				to          : '',
-				use         : 'html',
-				flag        : 'kerplopped',
-				onInit      : function($from, $to) { console.log('onInit', this, $from, $to); },
-				onAfterInit : function($from, $to) { console.log('onAfterInit', this, $from, $to); }
-			});
-			
-		}
-		
-	//-->
+```js
+$(function() {
+	var $kerplop = $('.kerplop');
+	if ($kerplop.length) {
+		$kerplop.kerplop({
+			from        : '',
+			to          : '',
+			use         : 'html',
+			flag        : 'kerplopped',
+			onInit      : function($from, $to) { console.log('onInit', this, $from, $to); },
+			onAfterInit : function($from, $to) { console.log('onAfterInit', this, $from, $to); }
+		});
+	}
+});
 </script>
 ```
 
@@ -99,6 +89,25 @@ In this case, Kerplop will use options defined in plugin call (see examples abov
 <div class="kerplop" data-kerplop-to="incoming" data-kerplop-use="append" data-kerplop-flag="off"><p>HTML here!</p></div>
 ```
 
+#### CSS
+
+To hide the original element, you could simply use `display: none;` or something more screen reader and SEO-friendly, like:
+
+```css
+.off {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+```
+
+[Check out the demo page](http://mhulse.github.io/jquery-kerplop/demo/) for a live example.
+
 ---
 
 #### DEMO
@@ -111,7 +120,7 @@ In this case, Kerplop will use options defined in plugin call (see examples abov
 
 #### LEGAL
 
-Copyright © 2013 [Micky Hulse](http://hulse.me)/[The Register-Guard](http://mhulse.com)
+Copyright © 2013-16 [Micky Hulse](http://mky.io)
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
 
